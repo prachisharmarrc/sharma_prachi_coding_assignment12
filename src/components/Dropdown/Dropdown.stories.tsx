@@ -1,4 +1,3 @@
-
 import { Meta, StoryFn } from '@storybook/react';
 import Dropdown from './Dropdown';
 import { DropdownProps, Option } from './Dropdown.types';
@@ -9,7 +8,8 @@ export default {
   argTypes: {
     options: { control: 'object' },
     disabled: { control: 'boolean' },
-    backgroundColor: { control: 'color' }, // Add control for background color
+    backgroundColor: { control: 'color' },
+    visible: { control: 'boolean' }, // Add control for visibility
   },
 } as Meta;
 
@@ -23,5 +23,6 @@ Default.args = {
     { value: 'option3', label: 'Option 3' }
   ],
   disabled: false,
-  backgroundColor: '', // Add default background color
+  backgroundColor: '',
+  visible: true, // Set default visibility
 };

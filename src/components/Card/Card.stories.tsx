@@ -9,24 +9,24 @@ export default {
     children: { control: 'text', defaultValue: 'Card Content' },
     disabled: { control: 'boolean' },
     backgroundColor: { control: 'color' },
+    visible: { control: 'boolean' }, // Add control for visibility
   },
 } as Meta;
 
-// Define an intersection type including backgroundColor
-type CardStoryProps = CardProps & { backgroundColor?: string };
-
-const Template: StoryFn<CardStoryProps> = (args) => <Card {...args} />;
+const Template: StoryFn<CardProps & { visible: boolean }> = (args) => <Card {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   children: 'Card Content',
   disabled: false,
-  backgroundColor: 'red', // Use transparent as default background color
+  backgroundColor: 'red',
+  visible: true, // Set default visibility
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: 'Card Content',
   disabled: true,
-  backgroundColor: 'red', // Use transparent as default background color
+  backgroundColor: 'red',
+  visible: true, // Set default visibility
 };

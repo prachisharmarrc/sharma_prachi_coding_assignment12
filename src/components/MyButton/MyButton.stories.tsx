@@ -8,7 +8,8 @@ export default {
   argTypes: {
     children: { control: 'text' },
     disabled: { control: 'boolean' },
-    backgroundColor: { control: 'color' }, // Add background color control
+    backgroundColor: { control: 'color' },
+    visible: { control: 'boolean' }, // Add visibility control
   },
 } as Meta;
 
@@ -18,12 +19,14 @@ export const Default = Template.bind({});
 Default.args = {
   children: 'MyButton',
   disabled: false,
-  backgroundColor: '', // Add default background color
+  backgroundColor: '',
+  visible: true, // Set default visibility
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   children: 'MyButton',
   disabled: true,
-  backgroundColor: '', // Add default background color
+  backgroundColor: '',
+  visible: true, // Set default visibility
 };
