@@ -1,7 +1,9 @@
+
 export interface CardProps {
-    children: React.ReactNode;
-    disabled?: boolean;
-    visible?: boolean; // Add visible property
-    backgroundColor?: string;
-  }
-  
+  title: string;
+  description: string;
+  imageUrl: string;
+  visible?: boolean;
+  disabled?: boolean;
+}
+

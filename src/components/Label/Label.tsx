@@ -1,31 +1,31 @@
+
 import React from 'react';
 import styled from 'styled-components';
 import { LabelProps } from './Label.types';
 
-const StyledLabel = styled.label<LabelProps>`
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
-  color: ${({ disabled }) => (disabled ? 'grey' : 'black')};
-  display: ${({ visible }) => (visible ? 'inline-block' : 'none')};
-  width: 100%;
-  max-width: 200px;
+interface StyledLabelProps {
+  bgColor?: string;
+  disabled?: boolean;
+}
 
-  @media (max-width: 768px) {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
+const StyledLabel = styled.label<StyledLabelProps>`
+  background-color: ${({ bgColor }) => bgColor || 'transparent'};
+  padding: 8px;
+  margin: 4px;
+  border-radius: 4px;
+  opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
+  color: ${({ disabled }) => (disabled ? '#a9a9a9' : '#000000')};
+  transition: background-color 0.3s ease, transform 0.3s ease;
 
-  @media (max-width: 480px) {
-    padding: 6px 12px;
-    font-size: 12px;
+ &:hover {
+    background-color: #f0f0f0; 
   }
 `;
 
 const Label: React.FC<LabelProps> = ({ children, disabled, backgroundColor, visible = true }) => {
+  if (!visible) return null;
   return (
-    <StyledLabel backgroundColor={backgroundColor} disabled={disabled} visible={visible}>
+    <StyledLabel bgColor={backgroundColor} disabled={disabled}>
       {children}
     </StyledLabel>
   );

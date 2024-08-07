@@ -1,11 +1,14 @@
+
+// Dropdown.types.ts
 export interface Option {
   value: string;
   label: string;
 }
 
 export interface DropdownProps {
-  options: { value: string; label: string }[];
+  options: Option[];
   disabled?: boolean;
   backgroundColor?: string;
-  visible?: boolean; // Add visible property
+  visible?: boolean; // Add the visible property
 }
+
