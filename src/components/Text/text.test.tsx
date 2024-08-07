@@ -20,4 +20,19 @@ describe('Text Logic', () => {
     const result = validateText('');
     expect(result).toBe(false);
   });
+
+  test('should return false when text is whitespace only', () => {
+    const result = validateText('    ', 3);
+    expect(result).toBe(false);
+  });
+
+  test('should return false when text does not match the provided pattern', () => {
+    const result = validateText('Hello@World', 1, /^[a-zA-Z\s]+$/);
+    expect(result).toBe(false);
+  });
+
+  test('should return true when text matches the provided pattern', () => {
+    const result = validateText('Hello World', 1, /^[a-zA-Z\s]+$/);
+    expect(result).toBe(true);
+  });
 });

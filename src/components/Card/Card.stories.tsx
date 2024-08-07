@@ -30,8 +30,9 @@ export const Default: Story = {
     const canvas = within(canvasElement);
     const card = canvas.getByTestId('card-container');
 
+    // Check visibility and that the card is not disabled (no opacity effect)
     await expect(card).toBeVisible();
-    await expect(card).not.toHaveStyle('opacity: 0.5');
+    await expect(card).toHaveStyle('opacity: 1');
   },
 };
 
@@ -47,8 +48,8 @@ export const Disabled: Story = {
     const canvas = within(canvasElement);
     const card = canvas.getByTestId('card-container');
 
-    await expect(card).toHaveStyle('opacity: 0.5');
-    await expect(card).toHaveStyle('pointer-events: none');
+    // Check if the card has reduced opacity and disabled pointer events
+    await expect(card).toHaveStyle({ opacity: '0.5', pointerEvents: 'none' });
   },
 };
 
@@ -64,7 +65,8 @@ export const Invisible: Story = {
     const canvas = within(canvasElement);
     const card = canvas.queryByTestId('card-container');
 
-    await expect(card).toBeNull();
+    // Ensure that the card is not rendered in the document
+    await expect(card).not.toBeInTheDocument();
   },
 };
 
@@ -80,8 +82,10 @@ export const Hover: Story = {
     const canvas = within(canvasElement);
     const card = canvas.getByTestId('card-container');
 
-  
+    // Simulate a hover event on the card
     await userEvent.hover(card);
 
+    // Additional checks can be added here if needed, for example:
+    // await expect(card).toHaveStyle('transform: scale(1.05)');
   },
 };
