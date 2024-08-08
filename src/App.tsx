@@ -30,25 +30,37 @@ function App() {
       </section>
 
       <section className="portfolio-section">
-        <Card
-          title="CMS Project"
-          description="This is a content management system project."
-          imageUrl="path/to/cms-project.jpg"
-          disabled={false}
-        />
-        <Card
-          title="Freelancing Portfolio Websites"
-          description="Various portfolio websites built for freelance clients."
-          imageUrl="path/to/portfolio-project.jpg"
-          disabled={false}
-        />
-        <Card
-          title="Other Projects"
-          description="A collection of other projects I've worked on."
-          imageUrl="path/to/other-projects.jpg"
-          disabled={false}
-        />
-        <div className="portfolio-item skills">
+        <div className="portfolio-item">
+          <Card
+            title="CMS Project"
+            description="This is a content management system project."
+            imageUrl="path/to/cms-project.jpg"
+            disabled={false}
+          >
+            <Text className="portfolio-text">Additional details about the CMS project.</Text>
+          </Card>
+        </div>
+        <div className="portfolio-item">
+          <Card
+            title="Freelancing Portfolio Websites"
+            description="Various portfolio websites built for freelance clients."
+            imageUrl="path/to/portfolio-project.jpg"
+            disabled={false}
+          >
+            <Text className="portfolio-text">Additional details about freelancing portfolio websites.</Text>
+          </Card>
+        </div>
+        <div className="portfolio-item">
+          <Card
+            title="Other Projects"
+            description="A collection of other projects I've worked on."
+            imageUrl="path/to/other-projects.jpg"
+            disabled={false}
+          >
+            <Text className="portfolio-text">Additional details about other projects.</Text>
+          </Card>
+        </div>
+        <div className="portfolio-item">
           <Label className="portfolio-label">My Skills</Label>
           <Button disabled={false} className="portfolio-button">
             Explore More
