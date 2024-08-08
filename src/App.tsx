@@ -7,8 +7,6 @@ import Button from './components/Button/Button';
 import Text from './components/Text/Text';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   const dropdownOptions = [
     { value: 'cms', label: 'CMS Project' },
     { value: 'portfolio', label: 'Freelancing Portfolio Websites' },
@@ -32,22 +30,25 @@ function App() {
       </section>
 
       <section className="portfolio-section">
-        <div className="portfolio-item">
-          <Card disabled={false}>
-            <Text className="portfolio-text">Project 1: CMS Project</Text>
-          </Card>
-        </div>
-        <div className="portfolio-item">
-          <Card disabled={false}>
-            <Text className="portfolio-text">Project 2: Freelancing Portfolio Websites</Text>
-          </Card>
-        </div>
-        <div className="portfolio-item">
-          <Card disabled={false}>
-            <Text className="portfolio-text">Project 3: Other Projects</Text>
-          </Card>
-        </div>
-        <div className="portfolio-item">
+        <Card
+          title="CMS Project"
+          description="This is a content management system project."
+          imageUrl="path/to/cms-project.jpg"
+          disabled={false}
+        />
+        <Card
+          title="Freelancing Portfolio Websites"
+          description="Various portfolio websites built for freelance clients."
+          imageUrl="path/to/portfolio-project.jpg"
+          disabled={false}
+        />
+        <Card
+          title="Other Projects"
+          description="A collection of other projects I've worked on."
+          imageUrl="path/to/other-projects.jpg"
+          disabled={false}
+        />
+        <div className="portfolio-item skills">
           <Label className="portfolio-label">My Skills</Label>
           <Button disabled={false} className="portfolio-button">
             Explore More

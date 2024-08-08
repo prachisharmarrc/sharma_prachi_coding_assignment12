@@ -4,5 +4,6 @@ export interface LabelProps {
   disabled?: boolean;
   backgroundColor?: string;
   visible?: boolean;
+  className?: string;
 }
 

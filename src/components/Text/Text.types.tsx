@@ -4,4 +4,5 @@ export interface TextProps {
   disabled?: boolean;
   backgroundColor?: string;
   visible?: boolean;
+  className?: string;
 }

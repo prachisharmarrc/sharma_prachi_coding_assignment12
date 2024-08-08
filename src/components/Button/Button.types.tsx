@@ -5,5 +5,6 @@ export interface ButtonProps {
   disabled?: boolean;
   backgroundColor?: string;
   visible?: boolean; // Add the visible property
+  className?: string;
 }
 
